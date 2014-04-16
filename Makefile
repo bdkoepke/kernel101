@@ -6,3 +6,6 @@ kasm.o:
 
 kc.o:
 	gcc -m32 -c kernel.c -o kc.o
+
+clean:
+	rm -f kasm.o kc.o kernel
