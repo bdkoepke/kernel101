@@ -16,12 +16,13 @@ void kmain(void) {
     LightMagenta = 13,
     LightBrown = 14,
     White = 15
-  } ConsoleColors;
+  } ConsoleColor;
   char *message = "my first kernel", *protected_video_memory = (char *)0xb8000;
+	ConsoleColor text_color = Blue;
   unsigned int i, j;
   for (j = 0; j < 80 * 25 * 2; j += 2)
-    protected_video_memory[j] = ' ', protected_video_memory[j + 1] = Blue;
+    protected_video_memory[j] = ' ', protected_video_memory[j + 1] = text_color;
   for (i = j = 0; message[j] != '\0'; i += 2, j++)
     protected_video_memory[i] = message[j],
-    protected_video_memory[i + 1] = Blue;
+    protected_video_memory[i + 1] = text_color;
 }
