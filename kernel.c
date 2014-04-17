@@ -18,7 +18,7 @@ void kmain(void) {
     White = 15
   } ConsoleColor;
   char *message = "my first kernel", *protected_video_memory = (char *)0xb8000;
-	ConsoleColor text_color = Blue;
+  ConsoleColor text_color = Blue;
   unsigned int i, j;
   for (j = 0; j < 80 * 25 * 2; j += 2)
     protected_video_memory[j] = ' ', protected_video_memory[j + 1] = text_color;
